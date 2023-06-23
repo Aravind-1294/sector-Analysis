@@ -1,5 +1,5 @@
 Flask
 openai
 langchain
-faiss-cpu
+faiss-cpu == 1.7.4
 gunicorn
