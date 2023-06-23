@@ -1,6 +1,5 @@
 from langchain import OpenAI, ConversationChain, LLMChain, PromptTemplate
 from langchain.chains import LLMChain
-from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from flask import Flask, request, render_template
