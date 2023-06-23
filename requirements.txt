@@ -2,3 +2,4 @@ Flask
 openai
 langchain
 faiss-cpu
+gunicorn
