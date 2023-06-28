@@ -6,13 +6,14 @@ from langchain.chains import LLMChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
-st.set_page_config(page_title="SectorGPT",page_icon="📈",layout='wide')
-st.subheader('Hello :wave:! Investor welcome to ')
-st.title('SectorGPT')
-st.subheader("Your Ultimate Indian Stock Market Sector Analysis Assistant!")
-with st.container():
+def main():
+   st.set_page_config(page_title="SectorGPT",page_icon="📈",layout='wide')
+   st.subheader('Hello :wave:! Investor welcome to ')
+   st.title('SectorGPT')
+   st.subheader("Your Ultimate Indian Stock Market Sector Analysis Assistant!")
+   with st.container():
     st.write("---")
-    query = st.text_area("Ask any question related to sector analysis",height=10)
+    query = st.text_area("Ask any question related to sector analysis")
     if st.button("Analyze"):
         with st.spinner('Analyzing Data ...'):
           embed = OpenAIEmbeddings(openai_api_key='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')
@@ -35,3 +36,6 @@ with st.container():
           output = chain.predict(query=query,answer=answer)
           st.subheader('Analysis:')
           st.write(output)
+
+if __name__ =="__main__":
+   main()
